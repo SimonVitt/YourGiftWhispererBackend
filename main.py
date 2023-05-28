@@ -8,7 +8,6 @@ from flask_cors import CORS
 load_dotenv()
 app = Flask(__name__)
 CORS(app, origins="https://yourgiftwhisperer.com")
-app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 @app.route("/getidea", methods=["POST"])
