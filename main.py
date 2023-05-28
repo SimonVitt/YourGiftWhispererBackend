@@ -20,11 +20,6 @@ def get_idea():
             max_tokens = 1200,
             temperature=0.8
         )
-        try:
-            with open("usercommunication.txt", "a") as file:
-                file.write(user_input, "++++", response["choices"][0]["text"])
-        except Exception as e:
-            print(e)
         return response
     
 @app.route("/get_more_ideas", methods=["POST"])
